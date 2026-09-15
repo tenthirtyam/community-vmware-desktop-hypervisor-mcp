@@ -12,20 +12,20 @@ from unittest.mock import patch
 import pytest
 from mcp.server.fastmcp import FastMCP
 
-from community_vmware_desktop_hypervisor_mcp_server.context import get_app_context
-from community_vmware_desktop_hypervisor_mcp_server.server import (  # pyright: ignore[reportPrivateUsage]
+from community_vmware_desktop_hypervisor_mcp.context import get_app_context
+from community_vmware_desktop_hypervisor_mcp.server import (  # pyright: ignore[reportPrivateUsage]
     _configure_logging,
     lifespan,
     main,
 )
-from community_vmware_desktop_hypervisor_mcp_server.tools import register_tools
+from community_vmware_desktop_hypervisor_mcp.tools import register_tools
 
 
 @pytest.mark.asyncio
 async def test_lifespan_sets_runner() -> None:
     fake_binary = Path("/usr/bin/vmcli")
     with patch(
-        "community_vmware_desktop_hypervisor_mcp_server.server.resolve_vmcli",
+        "community_vmware_desktop_hypervisor_mcp.server.resolve_vmcli",
         return_value=fake_binary,
     ):
         async with lifespan(FastMCP("test")):
@@ -47,10 +47,10 @@ def test_register_tools_smoke() -> None:
 def test_configure_logging_uses_settings() -> None:
     with (
         patch(
-            "community_vmware_desktop_hypervisor_mcp_server.server.get_settings",
+            "community_vmware_desktop_hypervisor_mcp.server.get_settings",
         ) as mock_get_settings,
         patch(
-            "community_vmware_desktop_hypervisor_mcp_server.server.logging.basicConfig"
+            "community_vmware_desktop_hypervisor_mcp.server.logging.basicConfig"
         ) as mock_basic_config,
     ):
         mock_get_settings.return_value.log_level = "INFO"
@@ -62,12 +62,12 @@ def test_configure_logging_uses_settings() -> None:
 def test_main_registers_tools_and_runs_server() -> None:
     with (
         patch(
-            "community_vmware_desktop_hypervisor_mcp_server.server._configure_logging"
+            "community_vmware_desktop_hypervisor_mcp.server._configure_logging"
         ) as mock_logging,
         patch(
-            "community_vmware_desktop_hypervisor_mcp_server.server.register_tools"
+            "community_vmware_desktop_hypervisor_mcp.server.register_tools"
         ) as mock_register_tools,
-        patch("community_vmware_desktop_hypervisor_mcp_server.server.mcp.run") as mock_run,
+        patch("community_vmware_desktop_hypervisor_mcp.server.mcp.run") as mock_run,
     ):
         main()
 

@@ -8,8 +8,8 @@ from __future__ import annotations
 import pytest
 from pydantic import ValidationError
 
-from community_vmware_desktop_hypervisor_mcp_server.inventory import resolve_vmx_path
-from community_vmware_desktop_hypervisor_mcp_server.schemas import (
+from community_vmware_desktop_hypervisor_mcp.inventory import resolve_vmx_path
+from community_vmware_desktop_hypervisor_mcp.schemas import (
     DiskParams,
     GuestParams,
     PowerParams,

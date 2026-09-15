@@ -7,7 +7,7 @@ from __future__ import annotations
 
 from mcp.types import CallToolResult, TextContent
 
-from community_vmware_desktop_hypervisor_mcp_server.server_common import (
+from community_vmware_desktop_hypervisor_mcp.server_common import (
     VmCliResult,
     _is_progress_only_stderr,  # pyright: ignore[reportPrivateUsage]
     tool_result_from_vmcli,

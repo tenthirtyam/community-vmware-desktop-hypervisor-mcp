@@ -1,5 +1,5 @@
 [project]
-name = "community-vmware-desktop-hypervisor-mcp-server"
+name = "community-vmware-desktop-hypervisor-mcp"
 version = "0.1.0"
 description = "A Community MCP Server for VMware Desktop Hypervisors"
 readme = "README.md"
@@ -52,12 +52,12 @@ docs = [
 ]
 
 [project.scripts]
-community-vmware-desktop-hypervisor-mcp-server = "community_vmware_desktop_hypervisor_mcp_server.server:main"
+community-vmware-desktop-hypervisor-mcp = "community_vmware_desktop_hypervisor_mcp.server:main"
 
 [project.urls]
-documentation = "https://tenthirtyam.org/community-vmware-desktop-hypervisor-mcp-server"
-source        = "https://github.com/tenthirtyam/community-vmware-desktop-hypervisor-mcp-server"
-issues        = "https://github.com/tenthirtyam/community-vmware-desktop-hypervisor-mcp-server/discussions"
+documentation = "https://tenthirtyam.org/community-vmware-desktop-hypervisor-mcp"
+source        = "https://github.com/tenthirtyam/community-vmware-desktop-hypervisor-mcp"
+issues        = "https://github.com/tenthirtyam/community-vmware-desktop-hypervisor-mcp/discussions"
 
 [build-system]
 requires = ["setuptools>=61"]
@@ -67,7 +67,7 @@ build-backend = "setuptools.build_meta"
 where = ["src"]
 
 [tool.setuptools.package-data]
-community_vmware_desktop_hypervisor_mcp_server = ["manifest.json"]
+community_vmware_desktop_hypervisor_mcp = ["manifest.json"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
@@ -78,7 +78,7 @@ markers = [
 addopts = [
     "-m",
     "not e2e",
-    "--cov=community_vmware_desktop_hypervisor_mcp_server",
+    "--cov=community_vmware_desktop_hypervisor_mcp",
     "--cov-report=term-missing",
     "--cov-report=html",
     "--cov-report=xml",
@@ -86,7 +86,7 @@ addopts = [
 ]
 
 [tool.coverage.run]
-source = ["src/community_vmware_desktop_hypervisor_mcp_server"]
+source = ["src/community_vmware_desktop_hypervisor_mcp"]
 omit = ["*/tests/*", "*/__pycache__/*"]
 
 [tool.coverage.report]
@@ -125,23 +125,23 @@ module = "mcp.*"
 ignore_missing_imports = true
 
 [[tool.mypy.overrides]]
-module = "community_vmware_desktop_hypervisor_mcp_server.server"
+module = "community_vmware_desktop_hypervisor_mcp.server"
 disable_error_code = ["misc", "no-untyped-call"]
 
 [[tool.mypy.overrides]]
-module = "community_vmware_desktop_hypervisor_mcp_server.tools"
+module = "community_vmware_desktop_hypervisor_mcp.tools"
 disable_error_code = ["misc"]
 
 [[tool.mypy.overrides]]
-module = "community_vmware_desktop_hypervisor_mcp_server.server_common"
+module = "community_vmware_desktop_hypervisor_mcp.server_common"
 disable_error_code = ["union-attr"]
 
 [[tool.mypy.overrides]]
-module = "community_vmware_desktop_hypervisor_mcp_server.vmcli"
+module = "community_vmware_desktop_hypervisor_mcp.vmcli"
 disable_error_code = ["no-any-return"]
 
 [[tool.mypy.overrides]]
-module = "community_vmware_desktop_hypervisor_mcp_server.config"
+module = "community_vmware_desktop_hypervisor_mcp.config"
 disable_error_code = ["attr-defined"]
 
 [tool.ruff]
@@ -209,22 +209,22 @@ ignore = [
     "ARG002",  # Unused mock method args
     "ARG005",  # Unused lambda args in mocks
 ]
-"src/community_vmware_desktop_hypervisor_mcp_server/_generated_actions.py" = ["E501", "Q000"]
-"src/community_vmware_desktop_hypervisor_mcp_server/discovery.py" = ["E501", "TCH003", "EM102", "SIM102", "PLR2004"]
+"src/community_vmware_desktop_hypervisor_mcp/_generated_actions.py" = ["E501", "Q000"]
+"src/community_vmware_desktop_hypervisor_mcp/discovery.py" = ["E501", "TCH003", "EM102", "SIM102", "PLR2004"]
 "scripts/*.py" = [
     "T20",     # print() is intentional in CLI scripts
     "PLR2004", # Magic values acceptable in CLI arg count checks
 ]
-"src/community_vmware_desktop_hypervisor_mcp_server/context.py" = ["PLW0603", "PLC0415"]
-"src/community_vmware_desktop_hypervisor_mcp_server/schemas.py" = ["ANN102", "TCH001", "ANN101", "SIM102"]
-"src/community_vmware_desktop_hypervisor_mcp_server/tools.py" = ["E501", "ERA001", "TCH001", "TCH002", "TCH003"]
-"src/community_vmware_desktop_hypervisor_mcp_server/server.py" = ["TRY401", "TRY400", "TCH003"]
-"src/community_vmware_desktop_hypervisor_mcp_server/server_common.py" = ["E501", "ANN101"]
-"src/community_vmware_desktop_hypervisor_mcp_server/vmcli.py" = ["E501", "TCH003", "ANN101"]
-"src/community_vmware_desktop_hypervisor_mcp_server/handlers.py" = ["PLR0911", "PLR0912", "PLR0915", "E501", "TCH002", "TCH003", "UP040"]
-"src/community_vmware_desktop_hypervisor_mcp_server/config.py" = ["PLC0415", "EM101", "ANN102", "PLW0603"]
-"src/community_vmware_desktop_hypervisor_mcp_server/platform_detector.py" = ["EM102"]
-"src/community_vmware_desktop_hypervisor_mcp_server/inventory.py" = ["PLW2901", "PLW0602", "EM102", "PLW0603"]
+"src/community_vmware_desktop_hypervisor_mcp/context.py" = ["PLW0603", "PLC0415"]
+"src/community_vmware_desktop_hypervisor_mcp/schemas.py" = ["ANN102", "TCH001", "ANN101", "SIM102"]
+"src/community_vmware_desktop_hypervisor_mcp/tools.py" = ["E501", "ERA001", "TCH001", "TCH002", "TCH003"]
+"src/community_vmware_desktop_hypervisor_mcp/server.py" = ["TRY401", "TRY400", "TCH003"]
+"src/community_vmware_desktop_hypervisor_mcp/server_common.py" = ["E501", "ANN101"]
+"src/community_vmware_desktop_hypervisor_mcp/vmcli.py" = ["E501", "TCH003", "ANN101"]
+"src/community_vmware_desktop_hypervisor_mcp/handlers.py" = ["PLR0911", "PLR0912", "PLR0915", "E501", "TCH002", "TCH003", "UP040"]
+"src/community_vmware_desktop_hypervisor_mcp/config.py" = ["PLC0415", "EM101", "ANN102", "PLW0603"]
+"src/community_vmware_desktop_hypervisor_mcp/platform_detector.py" = ["EM102"]
+"src/community_vmware_desktop_hypervisor_mcp/inventory.py" = ["PLW2901", "PLW0602", "EM102", "PLW0603"]
 "tests/conftest.py" = ["ARG001"]
 "tests/test_inventory.py" = ["TCH003", "PLC0415"]
 "tests/test_vmcli.py" = ["TCH003", "S108"]
@@ -235,7 +235,7 @@ ignore = [
 "tests/test_schemas.py" = ["RUF043", "S108"]
 
 [tool.ruff.lint.isort]
-known-first-party = ["community_vmware_desktop_hypervisor_mcp_server"]
+known-first-party = ["community_vmware_desktop_hypervisor_mcp"]
 
 [tool.ruff.format]
 quote-style = "double"

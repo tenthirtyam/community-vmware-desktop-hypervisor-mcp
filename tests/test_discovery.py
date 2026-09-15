@@ -7,7 +7,7 @@ from __future__ import annotations
 
 from pathlib import Path
 
-from community_vmware_desktop_hypervisor_mcp_server.discovery import parse_module_commands
+from community_vmware_desktop_hypervisor_mcp.discovery import parse_module_commands
 
 FIXTURES = Path(__file__).parent / "fixtures"
 

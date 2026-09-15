@@ -78,7 +78,7 @@ Built with [Properdocs](https://pypi.org/project/properdocs/) and
 3. Tag and push: `git tag v0.1.0 && git push origin v0.1.0`
 
 The release workflow]builds the package, created the release, and publishes to
-[PyPI](https://pypi.org/project/community-vmware-desktop-hypervisor-mcp-server/).
+[PyPI](https://pypi.org/project/community-vmware-desktop-hypervisor-mcp/).
 
 ## Pull Request Checklist
 

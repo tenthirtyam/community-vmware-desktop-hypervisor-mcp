@@ -1,17 +1,17 @@
 {
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
-  "name": "tenthirtyam/community-vmware-desktop-hypervisor-mcp-server",
+  "name": "tenthirtyam/community-vmware-desktop-hypervisor-mcp",
   "title": "A Community MCP Server for VMware Desktop Hypervisors",
   "description": "A community MCP server that exposes VMware Fusion and VMware Workstation desktop hypervisor operations to MCP hosts.",
   "repository": {
-    "url": "https://github.com/tenthirtyam/community-vmware-desktop-hypervisor-mcp-server",
+    "url": "https://github.com/tenthirtyam/community-vmware-desktop-hypervisor-mcp",
     "source": "github"
   },
   "version": "0.1.0",
   "packages": [
     {
       "registryType": "pypi",
-      "identifier": "community-vmware-desktop-hypervisor-mcp-server",
+      "identifier": "community-vmware-desktop-hypervisor-mcp",
       "version": "0.1.0",
       "transport": {
         "type": "stdio"

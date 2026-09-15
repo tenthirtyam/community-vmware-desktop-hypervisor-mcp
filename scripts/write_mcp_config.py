@@ -11,10 +11,10 @@ import sys
 from pathlib import Path
 from typing import Any
 
-SERVER_NAME = "community-vmware-desktop-hypervisor-mcp-server"
+SERVER_NAME = "community-vmware-desktop-hypervisor-mcp"
 SERVER_COMMAND = (
     'WF="${workspaceFolder}"; export PYTHONPATH="$WF/src"; '
-    'exec "$WF/.venv/bin/python" -m community_vmware_desktop_hypervisor_mcp_server.server'
+    'exec "$WF/.venv/bin/python" -m community_vmware_desktop_hypervisor_mcp.server'
 )
 
 

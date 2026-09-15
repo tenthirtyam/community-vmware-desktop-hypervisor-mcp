@@ -13,13 +13,13 @@ from pathlib import Path
 import pytest
 from mcp.types import CallToolResult, TextContent
 
-from community_vmware_desktop_hypervisor_mcp_server.handlers import (
+from community_vmware_desktop_hypervisor_mcp.handlers import (
     invoke_module,
     invoke_power,
     vm_list_data,
 )
-from community_vmware_desktop_hypervisor_mcp_server.manifest import query_action_for_module
-from community_vmware_desktop_hypervisor_mcp_server.schemas import (
+from community_vmware_desktop_hypervisor_mcp.manifest import query_action_for_module
+from community_vmware_desktop_hypervisor_mcp.schemas import (
     MODULE_PARAM_TYPES,
     PowerParams,
     ToolsParams,

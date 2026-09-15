@@ -15,14 +15,14 @@ from unittest.mock import AsyncMock
 
 import pytest
 
-from community_vmware_desktop_hypervisor_mcp_server.context import (
+from community_vmware_desktop_hypervisor_mcp.context import (
     AppContext,
     reset_app_context,
     set_app_context,
 )
-from community_vmware_desktop_hypervisor_mcp_server.inventory import clear_inventory_cache
-from community_vmware_desktop_hypervisor_mcp_server.platform_detector import resolve_vmcli
-from community_vmware_desktop_hypervisor_mcp_server.vmcli import VmCliRunner
+from community_vmware_desktop_hypervisor_mcp.inventory import clear_inventory_cache
+from community_vmware_desktop_hypervisor_mcp.platform_detector import resolve_vmcli
+from community_vmware_desktop_hypervisor_mcp.vmcli import VmCliRunner
 
 
 @pytest.fixture(autouse=True)

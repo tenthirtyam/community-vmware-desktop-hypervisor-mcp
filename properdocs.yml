@@ -5,16 +5,16 @@
 # ----------------------------------------------------------------------------------- #
 # Project Information
 # ----------------------------------------------------------------------------------- #
-site_name: community-vmware-desktop-hypervisor-mcp-server
+site_name: community-vmware-desktop-hypervisor-mcp
 site_description: A Community MCP server for VMware Desktop Hypervisors
-site_url: https://tenthirtyam.org/community-vmware-desktop-hypervisor-mcp-server/
+site_url: https://tenthirtyam.org/community-vmware-desktop-hypervisor-mcp/
 site_author: Ryan Johnson
 site_dir: .site
 
 # ----------------------------------------------------------------------------------- #
 # Repository
 # ----------------------------------------------------------------------------------- #
-repo_url: https://github.com/tenthirtyam/community-vmware-desktop-hypervisor-mcp-server
+repo_url: https://github.com/tenthirtyam/community-vmware-desktop-hypervisor-mcp
 repo_name: GitHub
 
 # ----------------------------------------------------------------------------------- #
@@ -209,8 +209,8 @@ nav:
       - Contributing: community/contributing.md
       - Code of Conduct: community/code-of-conduct.md
       - Development: community/development.md
-      - Releases: https://github.com/tenthirtyam/community-vmware-desktop-hypervisor-mcp-server/releases
-      - Discussions: https://github.com/tenthirtyam/community-vmware-desktop-hypervisor-mcp-server/discussions
+      - Releases: https://github.com/tenthirtyam/community-vmware-desktop-hypervisor-mcp/releases
+      - Discussions: https://github.com/tenthirtyam/community-vmware-desktop-hypervisor-mcp/discussions
       - License: community/license.md
       - Security: community/security.md
       - Disclaimer: community/disclaimer.md

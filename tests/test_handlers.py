@@ -11,7 +11,7 @@ from unittest.mock import AsyncMock, patch
 import pytest
 from mcp.types import CallToolResult, TextContent
 
-from community_vmware_desktop_hypervisor_mcp_server.handlers import (
+from community_vmware_desktop_hypervisor_mcp.handlers import (
     discover_capabilities_data,
     discover_capabilities_text,
     invoke_guest,
@@ -21,15 +21,15 @@ from community_vmware_desktop_hypervisor_mcp_server.handlers import (
     invoke_vm_create,
 )
 
-from community_vmware_desktop_hypervisor_mcp_server.schemas import (
+from community_vmware_desktop_hypervisor_mcp.schemas import (
     DiskParams,
     GuestParams,
     PowerParams,
     SnapshotParams,
     VmCreateParams,
 )
-from community_vmware_desktop_hypervisor_mcp_server.server_common import VmCliResult
-from community_vmware_desktop_hypervisor_mcp_server.vmcli import VmCliRunner
+from community_vmware_desktop_hypervisor_mcp.server_common import VmCliResult
+from community_vmware_desktop_hypervisor_mcp.vmcli import VmCliRunner
 
 
 def _text(result: CallToolResult) -> str:
@@ -46,7 +46,7 @@ async def test_invoke_power_success(app_context: VmCliRunner, tmp_path: Path) ->
     ok = VmCliResult(ok=True, stdout='{"state":"on"}', stderr="", returncode=0, command=[])
     app_context.run.return_value = ok  # type: ignore[attr-defined]
     with patch(
-        "community_vmware_desktop_hypervisor_mcp_server.handlers.resolve_vmx_path",
+        "community_vmware_desktop_hypervisor_mcp.handlers.resolve_vmx_path",
         return_value=vmx,
     ):
         result = await invoke_power(PowerParams(action="query", vmx_path=str(vmx)))
@@ -67,7 +67,7 @@ async def test_invoke_power_vmcli_error(app_context: VmCliRunner, tmp_path: Path
     )
     app_context.run.return_value = fail  # type: ignore[attr-defined]
     with patch(
-        "community_vmware_desktop_hypervisor_mcp_server.handlers.resolve_vmx_path",
+        "community_vmware_desktop_hypervisor_mcp.handlers.resolve_vmx_path",
         return_value=vmx,
     ):
         result = await invoke_power(PowerParams(action="query", vmx_path=str(vmx)))
@@ -85,7 +85,7 @@ async def test_invoke_power_start_paused_extra_args(
     ok = VmCliResult(ok=True, stdout="ok", stderr="", returncode=0, command=[])
     app_context.run.return_value = ok  # type: ignore[attr-defined]
     with patch(
-        "community_vmware_desktop_hypervisor_mcp_server.handlers.resolve_vmx_path",
+        "community_vmware_desktop_hypervisor_mcp.handlers.resolve_vmx_path",
         return_value=vmx,
     ):
         await invoke_power(
@@ -101,7 +101,7 @@ async def test_invoke_disk_builds_argv(app_context: VmCliRunner, tmp_path: Path)
     app_context.run.return_value = ok  # type: ignore[attr-defined]
     vmx = tmp_path / "test.vmx"
     with patch(
-        "community_vmware_desktop_hypervisor_mcp_server.handlers.resolve_vmx_path",
+        "community_vmware_desktop_hypervisor_mcp.handlers.resolve_vmx_path",
         return_value=vmx,
     ):
         await invoke_module("Disk", DiskParams(action="query", vmx_path=str(vmx)))
@@ -118,7 +118,7 @@ async def test_invoke_snapshot_take_extra_args(app_context: VmCliRunner, tmp_pat
     ok = VmCliResult(ok=True, stdout="ok", stderr="", returncode=0, command=[])
     app_context.run.return_value = ok  # type: ignore[attr-defined]
     with patch(
-        "community_vmware_desktop_hypervisor_mcp_server.handlers.resolve_vmx_path",
+        "community_vmware_desktop_hypervisor_mcp.handlers.resolve_vmx_path",
         return_value=vmx,
     ):
         await invoke_snapshot(
@@ -141,7 +141,7 @@ async def test_invoke_guest_run_builds_argv(app_context: VmCliRunner, tmp_path: 
     ok = VmCliResult(ok=True, stdout="31180", stderr="", returncode=0, command=[])
     app_context.run.return_value = ok  # type: ignore[attr-defined]
     with patch(
-        "community_vmware_desktop_hypervisor_mcp_server.handlers.resolve_vmx_path",
+        "community_vmware_desktop_hypervisor_mcp.handlers.resolve_vmx_path",
         return_value=vmx,
     ):
         result = await invoke_guest(
@@ -182,11 +182,11 @@ async def test_discover_capabilities_text() -> None:
     fake_manifest = {"version": "1.0", "modules": {}}
     with (
         patch(
-            "community_vmware_desktop_hypervisor_mcp_server.handlers.discover",
+            "community_vmware_desktop_hypervisor_mcp.handlers.discover",
             new=AsyncMock(return_value=fake_manifest),
         ),
         patch(
-            "community_vmware_desktop_hypervisor_mcp_server.handlers.get_runner",
+            "community_vmware_desktop_hypervisor_mcp.handlers.get_runner",
         ) as mock_get_runner,
     ):
         mock_get_runner.return_value.binary = Path("/usr/bin/vmcli")
@@ -199,11 +199,11 @@ async def test_discover_capabilities_data_uses_runner_binary() -> None:
     fake_manifest = {"version": "1.0", "modules": {}}
     with (
         patch(
-            "community_vmware_desktop_hypervisor_mcp_server.handlers.discover",
+            "community_vmware_desktop_hypervisor_mcp.handlers.discover",
             new=AsyncMock(return_value=fake_manifest),
         ) as mock_discover,
         patch(
-            "community_vmware_desktop_hypervisor_mcp_server.handlers.get_runner",
+            "community_vmware_desktop_hypervisor_mcp.handlers.get_runner",
         ) as mock_get_runner,
     ):
         mock_get_runner.return_value.binary = Path("/usr/bin/vmcli")

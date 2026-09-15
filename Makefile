@@ -90,13 +90,13 @@ $(PRE_COMMIT_STAMP): $(DEV_STAMP)
 	@touch $(PRE_COMMIT_STAMP)
 
 install-cursor: install
-	@$(PYTHON) -c "import community_vmware_desktop_hypervisor_mcp_server" || \
+	@$(PYTHON) -c "import community_vmware_desktop_hypervisor_mcp" || \
 		(echo "Package not importable: run: make install" && exit 1)
 	@$(PYTHON) scripts/write_mcp_config.py cursor .cursor/mcp.json
 	@echo "Enable in Cursor under 'Cursor Settings > Tools & MCPs'."
 
 install-vscode: install
-	@$(PYTHON) -c "import community_vmware_desktop_hypervisor_mcp_server" || \
+	@$(PYTHON) -c "import community_vmware_desktop_hypervisor_mcp" || \
 		(echo "Package not importable: run: make install" && exit 1)
 	@$(PYTHON) scripts/write_mcp_config.py vscode .vscode/mcp.json
 	@echo "Start in VS Code under 'MCP: List Servers'."
@@ -124,7 +124,7 @@ format: install-dev
 	$(RUFF) check --fix src tests
 
 typecheck: install-dev
-	$(MYPY) src/community_vmware_desktop_hypervisor_mcp_server
+	$(MYPY) src/community_vmware_desktop_hypervisor_mcp
 
 test: install-dev
 	PYTHONPATH=src $(PYTEST)

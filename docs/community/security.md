@@ -24,7 +24,7 @@ maintainers privately. The use of encrypted email is encouraged.
 
 To report a vulnerability or a security-related issue, please provide details by opening a [GitHub
 Security
-Advisory](https://github.com/tenthirtyam/community-vmware-desktop-hypervisor-mcp-server/security/advisories/new).
+Advisory](https://github.com/tenthirtyam/community-vmware-desktop-hypervisor-mcp/security/advisories/new).
 
   This allows anyone to report security vulnerabilities directly and privately to the maintainers
   via GitHub. Note that this option may not be present for every repository.
@@ -33,7 +33,7 @@ Feedback will be sent as soon as possible, including a detailed plan to investig
 any potential workarounds to perform in the meantime.
 
 Do not report non-security-impacting bugs through this channel. Use
-[GitHub Issues](https://github.com/tenthirtyam/community-vmware-desktop-hypervisor-mcp-server/issues)
+[GitHub Issues](https://github.com/tenthirtyam/community-vmware-desktop-hypervisor-mcp/issues)
 for all non-security-impacting bugs.
 
 ## Proposed Report Content

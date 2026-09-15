@@ -5,7 +5,7 @@
 
 from __future__ import annotations
 
-from community_vmware_desktop_hypervisor_mcp_server.manifest import (
+from community_vmware_desktop_hypervisor_mcp.manifest import (
     action_requires_vmx,
     get_commands,
     get_module_names,

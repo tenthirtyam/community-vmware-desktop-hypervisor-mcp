@@ -4,7 +4,7 @@ icon: octicons/rocket-16
 
 # Getting Started
 
-End-to-end path from VMware install to your first MCP tool call.
+End-to-end path from VMware Desktop Hypervisory install to your first MCP tool call.
 
 ## 1. Prerequisites
 
@@ -12,7 +12,7 @@ End-to-end path from VMware install to your first MCP tool call.
 2. **Python 3.12+** or **[uv](https://docs.astral.sh/uv/)**
 3. An **MCP host**: see the [Host Support](integration.md#host-support) matrix
 
-Verify VMware:
+Verify:
 
 ```bash
 vmcli --help
@@ -25,8 +25,8 @@ Default `vmcli` paths and overrides: [Installation](installation.md) · [Configu
 === "pip"
 
     ```bash
-    pip install community-vmware-desktop-hypervisor-mcp-server
-    community-vmware-desktop-hypervisor-mcp-server --help
+    pip install community-vmware-desktop-hypervisor-mcp
+    community-vmware-desktop-hypervisor-mcp --help
     ```
 
 === "uv"
@@ -34,14 +34,14 @@ Default `vmcli` paths and overrides: [Installation](installation.md) · [Configu
     No prior install: [uv](https://docs.astral.sh/uv/) fetches the package on first MCP host launch:
 
     ```bash
-    uv run --with community-vmware-desktop-hypervisor-mcp-server community-vmware-desktop-hypervisor-mcp-server --help
+    uv run --with community-vmware-desktop-hypervisor-mcp community-vmware-desktop-hypervisor-mcp --help
     ```
 
 === "From Source"
 
     ```bash
-    git clone https://github.com/tenthirtyam/community-vmware-desktop-hypervisor-mcp-server.git
-    cd community-vmware-desktop-hypervisor-mcp-server
+    git clone https://github.com/tenthirtyam/community-vmware-desktop-hypervisor-mcp.git
+    cd community-vmware-desktop-hypervisor-mcp
     make venv && make install-dev
     ```
 

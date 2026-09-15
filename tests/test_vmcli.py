@@ -10,14 +10,14 @@ from unittest.mock import AsyncMock, MagicMock, patch
 
 import pytest
 
-import community_vmware_desktop_hypervisor_mcp_server.context as context_module
-from community_vmware_desktop_hypervisor_mcp_server.context import (
+import community_vmware_desktop_hypervisor_mcp.context as context_module
+from community_vmware_desktop_hypervisor_mcp.context import (
     get_app_context,
     reset_app_context,
 )
-from community_vmware_desktop_hypervisor_mcp_server.manifest import action_requires_vmx
-from community_vmware_desktop_hypervisor_mcp_server.server_common import VmCliResult
-from community_vmware_desktop_hypervisor_mcp_server.vmcli import (
+from community_vmware_desktop_hypervisor_mcp.manifest import action_requires_vmx
+from community_vmware_desktop_hypervisor_mcp.server_common import VmCliResult
+from community_vmware_desktop_hypervisor_mcp.vmcli import (
     CommandBuilder,
     VmCliRunner,
     _query_format_args,  # pyright: ignore[reportPrivateUsage]

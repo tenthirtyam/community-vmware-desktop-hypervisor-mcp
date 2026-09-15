@@ -10,7 +10,7 @@ from unittest.mock import AsyncMock, patch
 
 import pytest
 
-from community_vmware_desktop_hypervisor_mcp_server.discovery import (
+from community_vmware_desktop_hypervisor_mcp.discovery import (
     action_doc,
     discover,
     parse_module_commands,
@@ -51,7 +51,7 @@ async def test_discover_builds_modules() -> None:
         return ""
 
     with patch(
-        "community_vmware_desktop_hypervisor_mcp_server.discovery.run_help",
+        "community_vmware_desktop_hypervisor_mcp.discovery.run_help",
         new=AsyncMock(side_effect=fake_run_help),
     ):
         manifest = await discover(Path("/usr/bin/vmcli"))
@@ -99,7 +99,7 @@ async def test_run_help_subprocess() -> None:
     proc.communicate = AsyncMock(return_value=(b"help text\n", b""))
     proc.returncode = 0
     with patch(
-        "community_vmware_desktop_hypervisor_mcp_server.discovery.asyncio.create_subprocess_exec",
+        "community_vmware_desktop_hypervisor_mcp.discovery.asyncio.create_subprocess_exec",
         new=AsyncMock(return_value=proc),
     ):
         text = await run_help(Path("/usr/bin/vmcli"), ["--help"])
@@ -113,7 +113,7 @@ async def test_run_help_failure_raises() -> None:
     proc.returncode = 1
     with (
         patch(
-            "community_vmware_desktop_hypervisor_mcp_server.discovery.asyncio.create_subprocess_exec",
+            "community_vmware_desktop_hypervisor_mcp.discovery.asyncio.create_subprocess_exec",
             new=AsyncMock(return_value=proc),
         ),
         pytest.raises(RuntimeError, match="failed"),

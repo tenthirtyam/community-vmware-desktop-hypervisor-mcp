@@ -72,7 +72,7 @@ This is an outline of the contributor workflow:
 Example:
 
 ```shell
-git remote add upstream https://github.com/tenthirtyam/community-vmware-desktop-hypervisor-mcp-server.git
+git remote add upstream https://github.com/tenthirtyam/community-vmware-desktop-hypervisor-mcp.git
 git checkout --branch feat/add-x main
 git commit --signoff --message "feat: add support for x
   Added support for x.
@@ -148,10 +148,10 @@ discuss, [open a discussion][gh-discussions].
 
 [dco]: https://probot.github.io/apps/dco/
 [conventional-commits]: https://conventionalcommits.org
-[gh-discussions]: https://github.com/tenthirtyam/community-vmware-desktop-hypervisor-mcp-server/discussions
-[gh-discussions-triage]: https://github.com/tenthirtyam/community-vmware-desktop-hypervisor-mcp-server/discussions/new?category=triage
-[gh-discussions-ideas]: https://github.com/tenthirtyam/community-vmware-desktop-hypervisor-mcp-server/discussions/new?category=ideas
-[gh-issues]: https://github.com/tenthirtyam/community-vmware-desktop-hypervisor-mcp-server/issues
+[gh-discussions]: https://github.com/tenthirtyam/community-vmware-desktop-hypervisor-mcp/discussions
+[gh-discussions-triage]: https://github.com/tenthirtyam/community-vmware-desktop-hypervisor-mcp/discussions/new?category=triage
+[gh-discussions-ideas]: https://github.com/tenthirtyam/community-vmware-desktop-hypervisor-mcp/discussions/new?category=ideas
+[gh-issues]: https://github.com/tenthirtyam/community-vmware-desktop-hypervisor-mcp/issues
 [gh-markdown]: https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github
 [gh-pull-requests]: https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request
 [better-git-commits]: https://tenthirtyam.org/dispatches/2026/03/22/conventional-commits-how-to-write-a-better-git-commit-message/?h=better+git

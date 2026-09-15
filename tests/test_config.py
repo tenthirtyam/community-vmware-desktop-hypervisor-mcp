@@ -7,7 +7,7 @@ from __future__ import annotations
 
 from unittest.mock import patch
 
-from community_vmware_desktop_hypervisor_mcp_server.config import Settings, get_settings
+from community_vmware_desktop_hypervisor_mcp.config import Settings, get_settings
 
 
 def test_vm_search_paths() -> None:
@@ -35,7 +35,7 @@ def test_from_env_invalid_values_fall_back() -> None:
 
 
 def test_get_settings_caches_result() -> None:
-    with patch("community_vmware_desktop_hypervisor_mcp_server.config._settings", None):
+    with patch("community_vmware_desktop_hypervisor_mcp.config._settings", None):
         first = get_settings()
         second = get_settings()
 

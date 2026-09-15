@@ -9,7 +9,7 @@ body:
         > [!IMPORTANT]
         > Do **not** open an issue.
         >
-        > Use the [GitHub Discussions](https://github.com/tenthirtyam/community-vmware-desktop-hypervisor-mcp-server/discussions) for questions, assistance, and discussions about this project.
+        > Use the [GitHub Discussions](https://github.com/tenthirtyam/community-vmware-desktop-hypervisor-mcp/discussions) for questions, assistance, and discussions about this project.
   - type: checkboxes
     attributes:
       label: Acknowledgement

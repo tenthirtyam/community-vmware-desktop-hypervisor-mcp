@@ -1,5 +1,5 @@
 {
-  "name": "community-vmware-desktop-hypervisor-mcp-server",
+  "name": "community-vmware-desktop-hypervisor-mcp",
   "image": "mcr.microsoft.com/devcontainers/python:1-3.12-bookworm",
   "remoteUser": "vscode",
   "forwardPorts": [8000],

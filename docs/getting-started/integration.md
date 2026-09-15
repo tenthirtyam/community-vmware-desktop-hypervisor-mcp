@@ -1,6 +1,6 @@
 # Integration
 
-Connect **community-vmware-desktop-hypervisor-mcp-server** to your MCP host. Transport is **stdio** only: the server must run where VMware is installed.
+Connect **community-vmware-desktop-hypervisor-mcp** to your MCP host. Transport is **stdio** only: the server must run where the VMware Desktop Hypervisory is installed.
 
 ## VS Code
 
@@ -12,9 +12,9 @@ Connect **community-vmware-desktop-hypervisor-mcp-server** to your MCP host. Tra
 ```json
 {
   "servers": {
-    "community-vmware-desktop-hypervisor-mcp-server": {
+    "community-vmware-desktop-hypervisor-mcp": {
       "type": "stdio",
-      "command": "community-vmware-desktop-hypervisor-mcp-server",
+      "command": "community-vmware-desktop-hypervisor-mcp",
       "env": {
         "VMCLI_OUTPUT_FORMAT": "json"
       }
@@ -28,12 +28,12 @@ Connect **community-vmware-desktop-hypervisor-mcp-server** to your MCP host. Tra
 ```json
 {
   "servers": {
-    "community-vmware-desktop-hypervisor-mcp-server": {
+    "community-vmware-desktop-hypervisor-mcp": {
       "type": "stdio",
       "command": "uv",
       "args": [
-        "run", "--with", "community-vmware-desktop-hypervisor-mcp-server",
-        "community-vmware-desktop-hypervisor-mcp-server"
+        "run", "--with", "community-vmware-desktop-hypervisor-mcp",
+        "community-vmware-desktop-hypervisor-mcp"
       ]
     }
   }
@@ -65,8 +65,8 @@ More: [VS Code MCP documentation](https://code.visualstudio.com/docs/copilot/cus
 ```json
 {
   "mcpServers": {
-    "community-vmware-desktop-hypervisor-mcp-server": {
-      "command": "community-vmware-desktop-hypervisor-mcp-server",
+    "community-vmware-desktop-hypervisor-mcp": {
+      "command": "community-vmware-desktop-hypervisor-mcp",
       "env": {
         "VMCLI_OUTPUT_FORMAT": "json"
       }
@@ -80,11 +80,11 @@ More: [VS Code MCP documentation](https://code.visualstudio.com/docs/copilot/cus
 ```json
 {
   "mcpServers": {
-    "community-vmware-desktop-hypervisor-mcp-server": {
+    "community-vmware-desktop-hypervisor-mcp": {
       "command": "uv",
       "args": [
-        "run", "--with", "community-vmware-desktop-hypervisor-mcp-server",
-        "community-vmware-desktop-hypervisor-mcp-server"
+        "run", "--with", "community-vmware-desktop-hypervisor-mcp",
+        "community-vmware-desktop-hypervisor-mcp"
       ]
     }
   }
@@ -95,7 +95,7 @@ More: [VS Code MCP documentation](https://code.visualstudio.com/docs/copilot/cus
 
 1. `make install-cursor`
 2. Open the repo in Cursor
-3. Enable **community-vmware-desktop-hypervisor-mcp-server** under **Settings → Tools & MCP**
+3. Enable **community-vmware-desktop-hypervisor-mcp** under **Settings → Tools & MCP**
 
 Uses [`.cursor/mcp.json`](../../.cursor/mcp.json) with `${workspaceFolder}` and a shell wrapper for paths with spaces.
 
@@ -109,7 +109,7 @@ Uses [`.cursor/mcp.json`](../../.cursor/mcp.json) with `${workspaceFolder}` and 
 
 | Issue                   | Fix                                                                                 |
 | ----------------------- | ----------------------------------------------------------------------------------- |
-| Server won't start      | Confirm `community-vmware-desktop-hypervisor-mcp-server` on `PATH` or use uv config |
+| Server won't start      | Confirm `community-vmware-desktop-hypervisor-mcp` on `PATH` or use uv config |
 | Tools missing           | Restart; re-enable in MCP settings                                                  |
 | Paths with spaces       | Use project `.cursor/mcp.json` shell wrapper                                        |
 
@@ -128,8 +128,8 @@ Restart Claude Desktop after editing.
 ```json
 {
   "mcpServers": {
-    "community-vmware-desktop-hypervisor-mcp-server": {
-      "command": "community-vmware-desktop-hypervisor-mcp-server",
+    "community-vmware-desktop-hypervisor-mcp": {
+      "command": "community-vmware-desktop-hypervisor-mcp",
       "env": {
         "VMCLI_PATH": "/Applications/VMware Fusion.app/Contents/Public/vmcli",
         "VMCLI_SEARCH_PATHS": "/Applications/Virtual Machines"
@@ -144,9 +144,9 @@ Restart Claude Desktop after editing.
 ```json
 {
   "mcpServers": {
-    "community-vmware-desktop-hypervisor-mcp-server": {
+    "community-vmware-desktop-hypervisor-mcp": {
       "command": "/absolute/path/to/.venv/bin/python",
-      "args": ["-m", "community_vmware_desktop_hypervisor_mcp_server.server"],
+      "args": ["-m", "community_vmware_desktop_hypervisor_mcp.server"],
       "env": {
         "VMCLI_PATH": "/Applications/VMware Fusion.app/Contents/Public/vmcli"
       }
@@ -167,23 +167,23 @@ Run in your **system terminal** ([Claude Code MCP docs](https://docs.claude.com/
 
 ```bash
 # pip
-claude mcp add community-vmware-desktop-hypervisor-mcp-server -s user -- community-vmware-desktop-hypervisor-mcp-server
+claude mcp add community-vmware-desktop-hypervisor-mcp -s user -- community-vmware-desktop-hypervisor-mcp
 
 # uv
-claude mcp add community-vmware-desktop-hypervisor-mcp-server -s user -- \
-  uv run --with community-vmware-desktop-hypervisor-mcp-server community-vmware-desktop-hypervisor-mcp-server
+claude mcp add community-vmware-desktop-hypervisor-mcp -s user -- \
+  uv run --with community-vmware-desktop-hypervisor-mcp community-vmware-desktop-hypervisor-mcp
 
 # with env
-claude mcp add community-vmware-desktop-hypervisor-mcp-server -s user \
+claude mcp add community-vmware-desktop-hypervisor-mcp -s user \
   -e VMCLI_PATH="/Applications/VMware Fusion.app/Contents/Public/vmcli" \
-  -- community-vmware-desktop-hypervisor-mcp-server
+  -- community-vmware-desktop-hypervisor-mcp
 ```
 
 Verify:
 
 ```bash
 claude mcp list
-claude mcp get community-vmware-desktop-hypervisor-mcp-server
+claude mcp get community-vmware-desktop-hypervisor-mcp
 ```
 
 ## Paths With Spaces
@@ -191,11 +191,11 @@ claude mcp get community-vmware-desktop-hypervisor-mcp-server
 ```json
 {
   "mcpServers": {
-    "community-vmware-desktop-hypervisor-mcp-server": {
+    "community-vmware-desktop-hypervisor-mcp": {
       "command": "/bin/sh",
       "args": [
         "-c",
-        "WF=\"$HOME/path/to/community-vmware-desktop-hypervisor-mcp-server\"; export PYTHONPATH=\"$WF/src\"; exec \"$WF/.venv/bin/python\" -m community_vmware_desktop_hypervisor_mcp_server.server"
+        "WF=\"$HOME/path/to/community-vmware-desktop-hypervisor-mcp\"; export PYTHONPATH=\"$WF/src\"; exec \"$WF/.venv/bin/python\" -m community_vmware_desktop_hypervisor_mcp.server"
       ]
     }
   }

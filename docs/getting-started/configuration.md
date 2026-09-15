@@ -19,9 +19,9 @@ Variables are read when the server process starts.
 ```json
 {
   "servers": {
-    "community-vmware-desktop-hypervisor-mcp-server": {
+    "community-vmware-desktop-hypervisor-mcp": {
       "type": "stdio",
-      "command": "community-vmware-desktop-hypervisor-mcp-server",
+      "command": "community-vmware-desktop-hypervisor-mcp",
       "env": {
         "VMCLI_PATH": "/Applications/VMware Fusion.app/Contents/Public/vmcli",
         "VMCLI_SEARCH_PATHS": "/Applications/Virtual Machines:/Users/example/Virtual Machines.localized",

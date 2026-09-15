@@ -16,27 +16,27 @@ from typing import TYPE_CHECKING
 
 from mcp.types import CallToolResult, TextContent
 
-from community_vmware_desktop_hypervisor_mcp_server.context import (
+from community_vmware_desktop_hypervisor_mcp.context import (
     AppContext,
     reset_app_context,
     set_app_context,
 )
-from community_vmware_desktop_hypervisor_mcp_server.handlers import (
+from community_vmware_desktop_hypervisor_mcp.handlers import (
     discover_capabilities_text,
     invoke_module,
     invoke_power,
     vm_list_text,
 )
-from community_vmware_desktop_hypervisor_mcp_server.inventory import clear_inventory_cache
-from community_vmware_desktop_hypervisor_mcp_server.manifest import query_action_for_module
-from community_vmware_desktop_hypervisor_mcp_server.platform_detector import resolve_vmcli
-from community_vmware_desktop_hypervisor_mcp_server.schemas import (
+from community_vmware_desktop_hypervisor_mcp.inventory import clear_inventory_cache
+from community_vmware_desktop_hypervisor_mcp.manifest import query_action_for_module
+from community_vmware_desktop_hypervisor_mcp.platform_detector import resolve_vmcli
+from community_vmware_desktop_hypervisor_mcp.schemas import (
     MODULE_PARAM_TYPES,
     MODULE_TOOL_NAMES,
     PowerParams,
     SnapshotParams,
 )
-from community_vmware_desktop_hypervisor_mcp_server.vmcli import VmCliRunner
+from community_vmware_desktop_hypervisor_mcp.vmcli import VmCliRunner
 
 if TYPE_CHECKING:
     from collections.abc import Awaitable

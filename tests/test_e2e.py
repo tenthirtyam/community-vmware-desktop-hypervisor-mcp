@@ -10,8 +10,8 @@ import os
 import pytest
 from mcp.types import CallToolResult, TextContent
 
-from community_vmware_desktop_hypervisor_mcp_server.handlers import invoke_power, vm_list_data
-from community_vmware_desktop_hypervisor_mcp_server.schemas import PowerParams
+from community_vmware_desktop_hypervisor_mcp.handlers import invoke_power, vm_list_data
+from community_vmware_desktop_hypervisor_mcp.schemas import PowerParams
 
 pytestmark = pytest.mark.e2e
 

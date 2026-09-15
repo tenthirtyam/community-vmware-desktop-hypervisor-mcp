@@ -11,10 +11,10 @@ from pathlib import Path
 
 import pytest
 
-from community_vmware_desktop_hypervisor_mcp_server import (
+from community_vmware_desktop_hypervisor_mcp import (
     _generated_actions as gen,  # pyright: ignore[reportPrivateUsage]
 )
-from community_vmware_desktop_hypervisor_mcp_server.manifest import (
+from community_vmware_desktop_hypervisor_mcp.manifest import (
     get_action_literals,
     get_commands,
     get_module_names,

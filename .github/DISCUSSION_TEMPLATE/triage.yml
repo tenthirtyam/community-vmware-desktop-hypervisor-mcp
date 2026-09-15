@@ -4,7 +4,7 @@ body:
   - type: markdown
     attributes:
       value: |
-        Before filing a triage discussion, please [search the existing discussions](https://github.com/tenthirtyam/community-vmware-desktop-hypervisor-mcp-server/discussions) (open or closed), and use the [reaction](https://github.blog/2016-03-10-add-reactions-to-pull-requests-issues-and-comments/) feature to add up-votes to existing submissions.
+        Before filing a triage discussion, please [search the existing discussions](https://github.com/tenthirtyam/community-vmware-desktop-hypervisor-mcp/discussions) (open or closed), and use the [reaction](https://github.blog/2016-03-10-add-reactions-to-pull-requests-issues-and-comments/) feature to add up-votes to existing submissions.
 
         When opening a triage discussion, please include the following information.
   - type: input
@@ -13,7 +13,7 @@ body:
       label: MCP Server Version
       description: |
         Please provide the version of the MCP Server.
-        We recommend testing with [the latest release](https://github.com/tenthirtyam/community-vmware-desktop-hypervisor-mcp-server/releases/latest).
+        We recommend testing with [the latest release](https://github.com/tenthirtyam/community-vmware-desktop-hypervisor-mcp/releases/latest).
       placeholder: e.g. x.y.z
     validations:
       required: true

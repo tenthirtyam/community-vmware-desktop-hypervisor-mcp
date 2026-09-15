@@ -15,15 +15,15 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
 
-from community_vmware_desktop_hypervisor_mcp_server.discovery import (  # noqa: E402
+from community_vmware_desktop_hypervisor_mcp.discovery import (  # noqa: E402
     discover,
     render_generated_actions,
 )
-from community_vmware_desktop_hypervisor_mcp_server.platform_detector import (  # noqa: E402
+from community_vmware_desktop_hypervisor_mcp.platform_detector import (  # noqa: E402
     resolve_vmcli,
 )
 
-PKG = ROOT / "src" / "community_vmware_desktop_hypervisor_mcp_server"
+PKG = ROOT / "src" / "community_vmware_desktop_hypervisor_mcp"
 
 
 def _write_line(text: str) -> None:

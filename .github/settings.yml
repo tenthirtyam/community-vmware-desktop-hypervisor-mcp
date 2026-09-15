@@ -3,7 +3,7 @@
 # Reference: https://probot.github.io/apps/settings/.
 
 repository:
-  name: community-vmware-desktop-hypervisor-mcp-server
+  name: community-vmware-desktop-hypervisor-mcp
   description: A Community MCP Server for VMware Desktop Hypervisors
   topics: mcp, mcp-server, vmware, vmware-fusion, vmware-workstation
   archived: false

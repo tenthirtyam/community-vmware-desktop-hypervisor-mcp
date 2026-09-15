@@ -2,7 +2,7 @@
 blank_issues_enabled: false
 contact_links:
   - name: Discussions
-    url: https://github.com/tenthirtyam/community-vmware-desktop-hypervisor-mcp-server/discussions/new/choose
+    url: https://github.com/tenthirtyam/community-vmware-desktop-hypervisor-mcp/discussions/new/choose
     about: The starting point for questions, assistance, and discussions about this project.
   - name: Sponsor this Project
     url: https://github.com/sponsors/tenthirtyam

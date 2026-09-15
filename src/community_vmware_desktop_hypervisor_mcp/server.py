@@ -1,7 +1,7 @@
 # Copyright (c) Ryan Johnson
 # SPDX-License-Identifier: MIT
 
-"""MCP server entry point for community-vmware-desktop-hypervisor-mcp-server."""
+"""MCP server entry point for community-vmware-desktop-hypervisor-mcp."""
 
 from __future__ import annotations
 
@@ -33,7 +33,7 @@ async def lifespan(_app: FastMCP) -> AsyncIterator[None]:
         reset_app_context(token)
 
 
-mcp = FastMCP("community-vmware-desktop-hypervisor-mcp-server", lifespan=lifespan)
+mcp = FastMCP("community-vmware-desktop-hypervisor-mcp", lifespan=lifespan)
 
 
 def _configure_logging() -> None:

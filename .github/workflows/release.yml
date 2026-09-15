@@ -61,7 +61,7 @@ jobs:
           gh release create "${{ github.ref_name }}" \
             --title "v${{ steps.version.outputs.VERSION }}" \
             dist/* \
-            --notes "Refer to the [documentation](https://tenthirtyam.org/community-vmware-desktop-hypervisor-mcp-server) to get started with this community MCP server." \
+            --notes "Refer to the [documentation](https://tenthirtyam.org/community-vmware-desktop-hypervisor-mcp) to get started with this community MCP server." \
             ${PRERELEASE_FLAG:+"${PRERELEASE_FLAG}"}
       - name: Publish to PyPI
         uses: pypa/gh-action-pypi-publish@cef221092ed1bacb1cc03d23a2d87d1d172e277b # v1.14.0

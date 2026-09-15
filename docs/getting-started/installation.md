@@ -5,37 +5,37 @@
 ### Using `pip`
 
 ```bash
-pip install community-vmware-desktop-hypervisor-mcp-server
+pip install community-vmware-desktop-hypervisor-mcp
 ```
 
-| Item               | Value                                                   |
-| ------------------ | ------------------------------------------------------- |
-| PyPI Package       | `community-vmware-desktop-hypervisor-mcp-server`        |
-| Console Entrypoint | `community-vmware-desktop-hypervisor-mcp-server`        |
-| Python Module      | `community_vmware_desktop_hypervisor_mcp_server.server` |
-| MCP Server Name    | `community-vmware-desktop-hypervisor-mcp-server`        |
-| Minimum Python     | 3.12                                                    |
+| Item               | Value                                            |
+| ------------------ | ------------------------------------------------ |
+| PyPI Package       | `community-vmware-desktop-hypervisor-mcp`        |
+| Console Entrypoint | `community-vmware-desktop-hypervisor-mcp`        |
+| Python Module      | `community_vmware_desktop_hypervisor_mcp.server` |
+| MCP Server Name    | `community-vmware-desktop-hypervisor-mcp`        |
+| Minimum Python     | 3.12                                             |
 
 ### Using `uv`
 
 Run without a persistent install:
 
 ```bash
-uv run --with community-vmware-desktop-hypervisor-mcp-server community-vmware-desktop-hypervisor-mcp-server
+uv run --with community-vmware-desktop-hypervisor-mcp community-vmware-desktop-hypervisor-mcp
 ```
 
 Or use `uvx` as a shorthand:
 
 ```bash
-uvx community-vmware-desktop-hypervisor-mcp-server
+uvx community-vmware-desktop-hypervisor-mcp
 ```
 
 ### Using `git`
 
 ```bash
 VERSION=v0.1.0
-git clone https://github.com/tenthirtyam/community-vmware-desktop-hypervisor-mcp-server.git
-cd community-vmware-desktop-hypervisor-mcp-server
+git clone https://github.com/tenthirtyam/community-vmware-desktop-hypervisor-mcp.git
+cd community-vmware-desktop-hypervisor-mcp
 git checkout tags/$VERSION
 make venv && make install-dev
 ```
@@ -49,6 +49,7 @@ Install VMware Fusion or Workstation on the **same machine** as the MCP server.
 | macOS    | VMware Fusion      | `/Applications/VMware Fusion.app/Contents/Public/vmcli`      |
 | Windows  | VMware Workstation | `C:\Program Files (x86)\VMware\VMware Workstation\vmcli.exe` |
 | Linux    | VMware Workstation | `/usr/bin/vmcli`                                             |
+
 Verify:
 
 ```bash
@@ -63,7 +64,7 @@ After install, run the server directly. It will block waiting for MCP host input
 output is expected:
 
 ```bash
-community-vmware-desktop-hypervisor-mcp-server
+community-vmware-desktop-hypervisor-mcp
 ```
 
 In an MCP host, call **`vm_discover_capabilities`** to confirm startup and `vmcli` resolution.

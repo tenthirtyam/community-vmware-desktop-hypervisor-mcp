@@ -11,7 +11,7 @@ from unittest.mock import patch
 
 import pytest
 
-from community_vmware_desktop_hypervisor_mcp_server.platform_detector import (
+from community_vmware_desktop_hypervisor_mcp.platform_detector import (
     get_ui_open_args,
     is_hypervisor_ui_running,
     resolve_vmcli,
@@ -40,11 +40,11 @@ def test_resolve_vmcli_via_which(tmp_path: Path) -> None:
     with (
         patch.dict("os.environ", {}, clear=False),
         patch(
-            "community_vmware_desktop_hypervisor_mcp_server.platform_detector.shutil.which",
+            "community_vmware_desktop_hypervisor_mcp.platform_detector.shutil.which",
             return_value=str(found),
         ),
         patch(
-            "community_vmware_desktop_hypervisor_mcp_server.platform_detector.DEFAULT_PATHS",
+            "community_vmware_desktop_hypervisor_mcp.platform_detector.DEFAULT_PATHS",
             {
                 "darwin": tmp_path / "missing",
                 "linux": tmp_path / "missing",
@@ -61,11 +61,11 @@ def test_resolve_vmcli_not_found() -> None:
     with (
         patch.dict("os.environ", {}, clear=False),
         patch(
-            "community_vmware_desktop_hypervisor_mcp_server.platform_detector.shutil.which",
+            "community_vmware_desktop_hypervisor_mcp.platform_detector.shutil.which",
             return_value=None,
         ),
         patch(
-            "community_vmware_desktop_hypervisor_mcp_server.platform_detector.DEFAULT_PATHS",
+            "community_vmware_desktop_hypervisor_mcp.platform_detector.DEFAULT_PATHS",
             {
                 "darwin": Path("/nonexistent/vmcli"),
                 "linux": Path("/nonexistent/vmcli"),
@@ -84,15 +84,15 @@ def test_resolve_vmcli_default_platform_path(tmp_path: Path) -> None:
     with (
         patch.dict("os.environ", {}, clear=False),
         patch(
-            "community_vmware_desktop_hypervisor_mcp_server.platform_detector.platform.system",
+            "community_vmware_desktop_hypervisor_mcp.platform_detector.platform.system",
             return_value="Darwin",
         ),
         patch(
-            "community_vmware_desktop_hypervisor_mcp_server.platform_detector.DEFAULT_PATHS",
+            "community_vmware_desktop_hypervisor_mcp.platform_detector.DEFAULT_PATHS",
             {"darwin": binary},
         ),
         patch(
-            "community_vmware_desktop_hypervisor_mcp_server.platform_detector.shutil.which",
+            "community_vmware_desktop_hypervisor_mcp.platform_detector.shutil.which",
             return_value=None,
         ),
     ):
@@ -109,15 +109,15 @@ def test_ui_running_darwin_pgrep_found() -> None:
     fake = sp.CompletedProcess(args=[], returncode=0)
     with (
         patch(
-            "community_vmware_desktop_hypervisor_mcp_server.platform_detector._platform_key",
+            "community_vmware_desktop_hypervisor_mcp.platform_detector._platform_key",
             return_value="darwin",
         ),
         patch(
-            "community_vmware_desktop_hypervisor_mcp_server.platform_detector.shutil.which",
+            "community_vmware_desktop_hypervisor_mcp.platform_detector.shutil.which",
             return_value="/usr/bin/pgrep",
         ),
         patch(
-            "community_vmware_desktop_hypervisor_mcp_server.platform_detector.subprocess.run",
+            "community_vmware_desktop_hypervisor_mcp.platform_detector.subprocess.run",
             return_value=fake,
         ),
     ):
@@ -128,15 +128,15 @@ def test_ui_running_darwin_pgrep_not_found() -> None:
     fake = sp.CompletedProcess(args=[], returncode=1)
     with (
         patch(
-            "community_vmware_desktop_hypervisor_mcp_server.platform_detector._platform_key",
+            "community_vmware_desktop_hypervisor_mcp.platform_detector._platform_key",
             return_value="darwin",
         ),
         patch(
-            "community_vmware_desktop_hypervisor_mcp_server.platform_detector.shutil.which",
+            "community_vmware_desktop_hypervisor_mcp.platform_detector.shutil.which",
             return_value="/usr/bin/pgrep",
         ),
         patch(
-            "community_vmware_desktop_hypervisor_mcp_server.platform_detector.subprocess.run",
+            "community_vmware_desktop_hypervisor_mcp.platform_detector.subprocess.run",
             return_value=fake,
         ),
     ):
@@ -147,15 +147,15 @@ def test_ui_running_windows_found() -> None:
     fake = sp.CompletedProcess(args=[], returncode=0, stdout='"vmware.exe","1234"\n')
     with (
         patch(
-            "community_vmware_desktop_hypervisor_mcp_server.platform_detector._platform_key",
+            "community_vmware_desktop_hypervisor_mcp.platform_detector._platform_key",
             return_value="windows",
         ),
         patch(
-            "community_vmware_desktop_hypervisor_mcp_server.platform_detector.shutil.which",
+            "community_vmware_desktop_hypervisor_mcp.platform_detector.shutil.which",
             return_value="C:\\Windows\\System32\\tasklist.exe",
         ),
         patch(
-            "community_vmware_desktop_hypervisor_mcp_server.platform_detector.subprocess.run",
+            "community_vmware_desktop_hypervisor_mcp.platform_detector.subprocess.run",
             return_value=fake,
         ),
     ):
@@ -165,15 +165,15 @@ def test_ui_running_windows_found() -> None:
 def test_ui_running_oserror_returns_false() -> None:
     with (
         patch(
-            "community_vmware_desktop_hypervisor_mcp_server.platform_detector._platform_key",
+            "community_vmware_desktop_hypervisor_mcp.platform_detector._platform_key",
             return_value="linux",
         ),
         patch(
-            "community_vmware_desktop_hypervisor_mcp_server.platform_detector.shutil.which",
+            "community_vmware_desktop_hypervisor_mcp.platform_detector.shutil.which",
             return_value="/usr/bin/pgrep",
         ),
         patch(
-            "community_vmware_desktop_hypervisor_mcp_server.platform_detector.subprocess.run",
+            "community_vmware_desktop_hypervisor_mcp.platform_detector.subprocess.run",
             side_effect=OSError("no proc fs"),
         ),
     ):
@@ -190,7 +190,7 @@ def test_get_ui_open_args_darwin(tmp_path: Path) -> None:
     vmx.parent.mkdir()
     vmx.write_text("", encoding="utf-8")
     with patch(
-        "community_vmware_desktop_hypervisor_mcp_server.platform_detector._platform_key",
+        "community_vmware_desktop_hypervisor_mcp.platform_detector._platform_key",
         return_value="darwin",
     ):
         args = get_ui_open_args(vmx)
@@ -204,11 +204,11 @@ def test_get_ui_open_args_linux_via_which(tmp_path: Path) -> None:
     vmx.write_text("", encoding="utf-8")
     with (
         patch(
-            "community_vmware_desktop_hypervisor_mcp_server.platform_detector._platform_key",
+            "community_vmware_desktop_hypervisor_mcp.platform_detector._platform_key",
             return_value="linux",
         ),
         patch(
-            "community_vmware_desktop_hypervisor_mcp_server.platform_detector.shutil.which",
+            "community_vmware_desktop_hypervisor_mcp.platform_detector.shutil.which",
             return_value="/usr/bin/vmware",
         ),
     ):
@@ -223,11 +223,11 @@ def test_get_ui_open_args_none_when_no_executable(tmp_path: Path) -> None:
     vmx.write_text("", encoding="utf-8")
     with (
         patch(
-            "community_vmware_desktop_hypervisor_mcp_server.platform_detector._platform_key",
+            "community_vmware_desktop_hypervisor_mcp.platform_detector._platform_key",
             return_value="linux",
         ),
         patch(
-            "community_vmware_desktop_hypervisor_mcp_server.platform_detector.shutil.which",
+            "community_vmware_desktop_hypervisor_mcp.platform_detector.shutil.which",
             return_value=None,
         ),
     ):
