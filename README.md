@@ -3,8 +3,7 @@
 A community MCP server for VMware® desktop hypervisors that exposes VMware Fusion and VMware
 Workstation operations to MCP hosts through the local `vmcli` CLI.[^1][^2]
 
-[![PyPI](https://img.shields.io/pypi/v/community-vmware-desktop-hypervisor-mcp?style=for-the-badge&logo=pypi&logoColor=white)](https://pypi.org/project/community-vmware-desktop-hypervisor-mcp/)&nbsp;&nbsp;
-[![Python](https://img.shields.io/pypi/pyversions/community-vmware-desktop-hypervisor-mcp?style=for-the-badge&logo=python&logoColor=white)](https://pypi.org/project/community-vmware-desktop-hypervisor-mcp/)&nbsp;&nbsp;
+[![PyPI](https://img.shields.io/pypi/v/community-vmware-desktop-hypervisor-mcp?style=for-the-badge&logo=pypi&logoColor=white)](https://pypi.org/project/community-vmware-desktop-hypervisor-mcp/)
 
 ## Getting Started
 

@@ -8,7 +8,6 @@ A community MCP server for VMware[®][tm] desktop hypervisors that exposes VMwar
 operations to MCP hosts through the local `vmcli` CLI.
 
 [![PyPI](https://img.shields.io/pypi/v/community-vmware-desktop-hypervisor-mcp)](https://pypi.org/project/community-vmware-desktop-hypervisor-mcp/)
-[![Python](https://img.shields.io/pypi/pyversions/community-vmware-desktop-hypervisor-mcp)](https://pypi.org/project/community-vmware-desktop-hypervisor-mcp/)
 
 ## Use Cases
 
