@@ -48,7 +48,7 @@ docs = [
     "mkdocs-git-revision-date-localized-plugin==1.6.0",
     "mkdocs-minify-plugin==0.8.0",
     "mkdocs-open-in-new-tab==1.0.8",
-    "mkdocstrings[python]==1.0.7",
+    "mkdocstrings[python]==1.0.8",
 ]
 
 [project.scripts]
