@@ -24,11 +24,11 @@ jobs:
       id-token: write
     steps:
       - name: Checkout
-        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
+        uses: actions/checkout@v7.0.0
         with:
           fetch-depth: 0
       - name: Setup Python
-        uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6.3.0
+        uses: actions/setup-python@v6.3.0
         with:
           python-version: "3.12"
       - name: Create Virtual Environment
@@ -64,6 +64,6 @@ jobs:
             --notes "Refer to the [documentation](https://tenthirtyam.org/community-vmware-desktop-hypervisor-mcp) to get started with this community MCP server." \
             ${PRERELEASE_FLAG:+"${PRERELEASE_FLAG}"}
       - name: Publish to PyPI
-        uses: pypa/gh-action-pypi-publish@cef221092ed1bacb1cc03d23a2d87d1d172e277b # v1.14.0
+        uses: pypa/gh-action-pypi-publish@v1.14.0
         with:
           skip-existing: true
