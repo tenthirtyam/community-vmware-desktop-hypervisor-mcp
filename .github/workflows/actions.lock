@@ -15,7 +15,7 @@ workflows:
     '.github/workflows/release.yml':
         - 'actions/checkout@v7.0.0'
         - 'actions/setup-python@v6.3.0'
-        - 'pypa/gh-action-pypi-publish@v1.14.0'
+        - 'pypa/gh-action-pypi-publish@v1.14.3'
     '.github/workflows/stale.yml':
         - 'actions/stale@v10.3.0'
     '.github/workflows/tests.yml':
@@ -42,9 +42,9 @@ dependencies:
         commit: 'sha1-f27b608878404679385c85cfa523b85ccb86e213'
         owner_id: 44036562
         repo_id: 177139928
-    'actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065':
-        ref: 'v5.6.0'
-        commit: 'sha1-a26af69be951a213d495a4c3e4e4022e16d87065'
+    'actions/setup-python@a309ff8b426b58ec0e2a45f0f869d46889d02405':
+        ref: 'v6.2.0'
+        commit: 'sha1-a309ff8b426b58ec0e2a45f0f869d46889d02405'
         owner_id: 44036562
         repo_id: 192625525
     'actions/setup-python@v6.2.0':
@@ -79,10 +79,10 @@ dependencies:
         commit: 'sha1-89ae32b08ed1a541efecbab17912962a5e38981c'
         owner_id: 7513068
         repo_id: 113918130
-    'pypa/gh-action-pypi-publish@v1.14.0':
-        ref: 'v1.14.0'
-        commit: 'sha1-cef221092ed1bacb1cc03d23a2d87d1d172e277b'
+    'pypa/gh-action-pypi-publish@v1.14.3':
+        ref: 'v1.14.3'
+        commit: 'sha1-7245906fb61fa33a13554f9d5fb856fe61758086'
         owner_id: 647025
         repo_id: 178055147
         uses:
-            - 'actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065'
+            - 'actions/setup-python@a309ff8b426b58ec0e2a45f0f869d46889d02405'

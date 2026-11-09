@@ -64,6 +64,6 @@ jobs:
             --notes "Refer to the [documentation](https://tenthirtyam.org/community-vmware-desktop-hypervisor-mcp) to get started with this community MCP server." \
             ${PRERELEASE_FLAG:+"${PRERELEASE_FLAG}"}
       - name: Publish to PyPI
-        uses: pypa/gh-action-pypi-publish@v1.14.0
+        uses: pypa/gh-action-pypi-publish@v1.14.3
         with:
           skip-existing: true
