@@ -10,8 +10,6 @@ workflows:
         - 'actions/upload-pages-artifact@v5.0.0'
     '.github/workflows/lock.yml':
         - 'dessant/lock-threads@v6.0.2'
-    '.github/workflows/pull-requests.yml':
-        - 'actions/labeler@v6.1.0'
     '.github/workflows/release.yml':
         - 'actions/checkout@v7.0.0'
         - 'actions/setup-python@v6.3.0'
@@ -37,11 +35,6 @@ dependencies:
         commit: 'sha1-cd2ce8fcbc39b97be8ca5fce6e763baed58fa128'
         owner_id: 44036562
         repo_id: 438112499
-    'actions/labeler@v6.1.0':
-        ref: 'v6.1.0'
-        commit: 'sha1-f27b608878404679385c85cfa523b85ccb86e213'
-        owner_id: 44036562
-        repo_id: 177139928
     'actions/setup-python@a309ff8b426b58ec0e2a45f0f869d46889d02405':
         ref: 'v6.2.0'
         commit: 'sha1-a309ff8b426b58ec0e2a45f0f869d46889d02405'
