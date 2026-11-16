@@ -4,35 +4,30 @@
 version: 'v0.0.3'
 workflows:
     '.github/workflows/docs.yml':
-        - 'actions/checkout@v7.0.0'
-        - 'actions/deploy-pages@v5.0.0'
-        - 'actions/setup-python@v6.3.0'
+        - 'actions/checkout@v7.0.1'
+        - 'actions/deploy-pages@v5.0.1'
+        - 'actions/setup-python@v7.1.0'
         - 'actions/upload-pages-artifact@v5.0.0'
     '.github/workflows/lock.yml':
         - 'dessant/lock-threads@v6.0.2'
     '.github/workflows/release.yml':
-        - 'actions/checkout@v7.0.0'
-        - 'actions/setup-python@v6.3.0'
+        - 'actions/checkout@v7.0.1'
+        - 'actions/setup-python@v7.1.0'
         - 'pypa/gh-action-pypi-publish@v1.14.3'
     '.github/workflows/stale.yml':
-        - 'actions/stale@v10.3.0'
+        - 'actions/stale@v11.0.0'
     '.github/workflows/tests.yml':
-        - 'actions/checkout@v6.0.2'
-        - 'actions/setup-python@v6.2.0'
+        - 'actions/checkout@v7.0.1'
+        - 'actions/setup-python@v7.1.0'
 dependencies:
-    'actions/checkout@v6.0.2':
-        ref: 'v6.0.2'
-        commit: 'sha1-de0fac2e4500dabe0009e67214ff5f5447ce83dd'
+    'actions/checkout@v7.0.1':
+        ref: 'v7.0.1'
+        commit: 'sha1-3d3c42e5aac5ba805825da76410c181273ba90b1'
         owner_id: 44036562
         repo_id: 197814629
-    'actions/checkout@v7.0.0':
-        ref: 'v7.0.0'
-        commit: 'sha1-9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0'
-        owner_id: 44036562
-        repo_id: 197814629
-    'actions/deploy-pages@v5.0.0':
-        ref: 'v5.0.0'
-        commit: 'sha1-cd2ce8fcbc39b97be8ca5fce6e763baed58fa128'
+    'actions/deploy-pages@v5.0.1':
+        ref: 'v5.0.1'
+        commit: 'sha1-368f82528645a54fb793d4d04e342629a3f51346'
         owner_id: 44036562
         repo_id: 438112499
     'actions/setup-python@a309ff8b426b58ec0e2a45f0f869d46889d02405':
@@ -40,19 +35,14 @@ dependencies:
         commit: 'sha1-a309ff8b426b58ec0e2a45f0f869d46889d02405'
         owner_id: 44036562
         repo_id: 192625525
-    'actions/setup-python@v6.2.0':
-        ref: 'v6.2.0'
-        commit: 'sha1-a309ff8b426b58ec0e2a45f0f869d46889d02405'
+    'actions/setup-python@v7.1.0':
+        ref: 'v7.1.0'
+        commit: 'sha1-6d4fd22b20465ccc0f7354476588e8df7c9ca0e0'
         owner_id: 44036562
         repo_id: 192625525
-    'actions/setup-python@v6.3.0':
-        ref: 'v6.3.0'
-        commit: 'sha1-ece7cb06caefa5fff74198d8649806c4678c61a1'
-        owner_id: 44036562
-        repo_id: 192625525
-    'actions/stale@v10.3.0':
-        ref: 'v10.3.0'
-        commit: 'sha1-eb5cf3af3ac0a1aa4c9c45633dd1ae542a27a899'
+    'actions/stale@v11.0.0':
+        ref: 'v11.0.0'
+        commit: 'sha1-4391f3da665fdf50b6810c1a66712fb9ba21aa93'
         owner_id: 44036562
         repo_id: 200437066
     'actions/upload-artifact@bbbca2ddaa5d8feaa63e36b76fdaad77386f024f':
